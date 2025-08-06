@@ -27,6 +27,6 @@ jobs:
       # 4️⃣ Run the mass challenge script
       - name: Send challenges to Lichess bot
         env:
-          TOKEN: ${{ secrets.LICHESS_TOKEN }}  # Secure API token from repo secrets
+          TOKEN: ${{ secrets.TOKEN }}  # Secure API token from repo secrets
         run: |
           python -u One.py
