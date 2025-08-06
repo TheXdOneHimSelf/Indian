@@ -122,16 +122,16 @@ online_moves:
     enabled: false                        # Activate online moves from Lichess cloud eval.
     priority: 200                         # Priority with which this move source is used. Higher priority is used first.
     only_without_book: false              # Whether the cloud should only be used if there is no matching book.
-    use_for_variants: true               # Whether the cloud should be used for other variants than standard and chess960.
+    use_for_variants: true                # Whether the cloud should be used for other variants than standard and chess960.
     min_eval_depth: 10                    # Minimum evaluation depth.
     min_time: 10                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
     timeout: 5                            # Time the server has to respond.
 #   max_depth: 16                         # Half move max depth. (Comment this line for max depth)
 #   max_moves: 1                          # Max number of moves played from Lichess cloud eval. (Comment this line for max moves)
   chessdb:
-    enabled: true                        # Activate online moves from https://chessdb.cn/queryc_en/
+    enabled: true                         # Activate online moves from https://chessdb.cn/queryc_en/
     priority: 100                         # Priority with which this move source is used. Higher priority is used first.
-    only_without_book: true              # Whether the chessdb should only be used if there is no matching book.
+    only_without_book: true               # Whether the chessdb should only be used if there is no matching book.
     min_candidates: 1                     # Minimum number of candidate moves.
     min_time: 10                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
     timeout: 5                            # Time the server has to respond.
@@ -139,8 +139,8 @@ online_moves:
 #   max_depth: 16                         # Half move max depth. (Comment this line for max depth)
 #   max_moves: 1                          # Max number of moves played from chessdb. (Comment this line for max moves)
   online_egtb:
-    enabled: true                        # Activate online endgame tablebases from Lichess.
-    min_time: 20                           # Time the bot must have at least to use the online move. +10 seconds in games without increment.
+    enabled: true                         # Activate online endgame tablebases from Lichess.
+    min_time: 20                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
     timeout: 3                            # Time the server has to respond.
 
 offer_draw:
@@ -151,14 +151,14 @@ offer_draw:
   against_humans: false                    # Activate whether these settings should apply against humans.
 
 resign:
-  enabled: true                          # Activate whether the bot should resign games.
+  enabled: true                           # Activate whether the bot should resign games.
   score: -1000                            # If the score is less than or equal to this value, the bot resigns (in cp).
   consecutive_moves: 5                    # How many moves in a row the score has to be below the resign value.
-  against_humans: false                    # Activate whether these settings should apply against humans.
+  against_humans: false                   # Activate whether these settings should apply against humans.
 
 challenge:                                # Incoming challenges.
-  concurrency: 4                          # Number of games to play simultaneously.
-  max_takebacks: 5                        # Maximum number of takebacks granted to a human.
+  concurrency: 3                          # Number of games to play simultaneously.
+  max_takebacks: 10                       # Maximum number of takebacks granted to a human.
   bullet_with_increment_only: false       # Whether bullet games against BOTs should only be accepted with increment.
 # min_increment: 0                        # Minimum amount of increment to accept a challenge.
 # max_increment: 180                      # Maximum amount of increment to accept a challenge.
@@ -236,3 +236,4 @@ books:
   BackupBook: "./engines/Book3.bin"
   win: "./engines/win.bin"
   bot: "./engines/bot.bin"
+
