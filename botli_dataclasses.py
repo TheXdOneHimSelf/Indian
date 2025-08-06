@@ -115,6 +115,7 @@ class Game_Information:
     variant_name: str
     initial_fen: str
     state: dict[str, Any]
+    tournament_id: str | None
 
     @classmethod
     def from_gameFull_event(cls, gameFull_event: dict[str, Any]) -> 'Game_Information':
@@ -139,10 +140,11 @@ class Game_Information:
         variant_name = gameFull_event['variant']['name']
         initial_fen = gameFull_event['initialFen']
         state = gameFull_event['state']
+        tournament_id = gameFull_event.get('tournamentId')
 
         return cls(id_, white_title, white_name, white_rating, white_ai_level, white_provisional, black_title,
                    black_name, black_rating, black_ai_level, black_provisional, initial_time_ms, increment_ms, speed,
-                   rated, variant, variant_name, initial_fen, state)
+                   rated, variant, variant_name, initial_fen, state, tournament_id)
 
     @property
     def id_str(self) -> str:
@@ -319,7 +321,6 @@ class Tournament:
     start_time: datetime
     end_time: datetime
     name: str
-    initial_time: int
     bots_allowed: bool
     team: str | None = None
     password: str | None = None
@@ -332,7 +333,6 @@ class Tournament:
                    start_time := datetime.fromisoformat(tournament_info['startsAt']),
                    start_time + timedelta(minutes=tournament_info['minutes']),
                    tournament_info.get('fullName', ''),
-                   tournament_info['clock']['limit'],
                    tournament_info.get('botsAllowed', False))
 
     @property
@@ -341,7 +341,7 @@ class Tournament:
 
     @property
     def seconds_to_finish(self) -> float:
-        return (self.end_time - datetime.now(UTC)).total_seconds() - max(30.0, min(self.initial_time / 2, 120.0))
+        return (self.end_time - datetime.now(UTC)).total_seconds()
 
     def cancel(self) -> None:
         if self.start_task:
