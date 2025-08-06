@@ -4,7 +4,7 @@ import time
 
 TOKEN = os.getenv("TOKEN")  # Read from GitHub Actions secrets securely
 BOT_NAME = "Sooraj_kumar_p_s"
-TOTAL_GAMES = 300
+TOTAL_GAMES = 100
 SLEEP_BETWEEN = 1.5  # Delay between challenges
 
 if not TOKEN:
@@ -22,7 +22,7 @@ def challenge_nimsilu():
         "clock.increment": 0,
         "rated": False,
         "color": "random",
-        "variant": "chess960"
+        "variant": "Standard"
     }
 
     for i in range(1, TOTAL_GAMES + 1):
