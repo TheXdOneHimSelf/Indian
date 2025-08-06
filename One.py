@@ -22,7 +22,7 @@ def challenge_nimsilu():
         "clock.increment": 0,
         "rated": False,
         "color": "random",
-        "variant": "Standard"
+        "variant": "standard"
     }
 
     for i in range(1, TOTAL_GAMES + 1):
