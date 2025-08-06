@@ -29,4 +29,4 @@ jobs:
         env:
           TOKEN: ${{ secrets.LICHESS_TOKEN }}  # Secure API token from repo secrets
         run: |
-          python One.py
+          python -u One.py
