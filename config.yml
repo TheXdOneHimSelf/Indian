@@ -77,8 +77,8 @@ gaviota:
   max_pieces: 5                           # Count of max pieces in the local gaviota endgame tablebases.
 
 opening_books:
-  enabled: true                          # Activate opening books.
-  priority: 600                           # Priority with which this move source is used. Higher priority is used first.
+  enabled: true                           # Activate opening books.
+  priority: 999                           # Priority with which this move source is used. Higher priority is used first.
   books:
 #   bullet:
 #     selection: weighted_random          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
@@ -94,6 +94,7 @@ opening_books:
  #    max_depth: 400                      # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
         - bot
+        - boom
         - win
         - DefaultBook
         - BackupBook
@@ -236,6 +237,8 @@ books:
   BackupBook: "./engines/Book3.bin"
   win: "./engines/win.bin"
   bot: "./engines/bot.bin"
+  boom: "./engines/b.bin"
+
 
 
 
