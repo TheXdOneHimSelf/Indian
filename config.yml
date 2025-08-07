@@ -90,8 +90,8 @@ opening_books:
 #     names:                              # List of names of books to use as black.
 #       - BlackBook
     standard:
-      selection: best_move          # Move selection is one of "weighted_random", "uniform_random" or "best_move".
-      max_depth: 400                      # Half move max depth. (Comment this line for max depth)
+      selection: best_move                # Move selection is one of "weighted_random", "uniform_random" or "best_move".
+ #    max_depth: 400                      # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
         - bot
         - win
@@ -236,5 +236,6 @@ books:
   BackupBook: "./engines/Book3.bin"
   win: "./engines/win.bin"
   bot: "./engines/bot.bin"
+
 
 
