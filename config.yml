@@ -6,11 +6,11 @@ engines:
     name: "stockfish"                     # Binary name of the engine to use.
     ponder: true                          # Think on opponent's time.
     silence_stderr: false                 # Suppresses stderr output.
-    move_overhead_multiplier: 23.0        # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
+    move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      Threads: 8                          # Max CPU threads the engine can use.
-      Hash: 5120                          # Max memory (in megabytes) the engine can allocate.
-      Move Overhead: 100                  # Increase if your bot flags games too often.
+      Threads: 6                          # Max CPU threads the engine can use.
+      Hash: 12000                         # Max memory (in megabytes) the engine can allocate.
+      Move Overhead: 250                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 5.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -91,7 +91,7 @@ opening_books:
 #       - BlackBook
     standard:
       selection: best_move                # Move selection is one of "weighted_random", "uniform_random" or "best_move".
-      max_depth: 400                      # Half move max depth. (Comment this line for max depth)
+      max_depth: 999                      # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
         - boom
         - win
@@ -156,7 +156,7 @@ resign:
   against_humans: false                   # Activate whether these settings should apply against humans.
 
 challenge:                                # Incoming challenges.
-  concurrency: 3                          # Number of games to play simultaneously.
+  concurrency: 1                          # Number of games to play simultaneously.
   max_takebacks: 10                       # Maximum number of takebacks granted to a human.
   bullet_with_increment_only: false       # Whether bullet games against BOTs should only be accepted with increment.
 # min_increment: 0                        # Minimum amount of increment to accept a challenge.
@@ -234,6 +234,7 @@ books:
   BackupBook: "./engines/Book3.bin"
   win: "./engines/win.bin"
   boom: "./engines/bot.bin"
+
 
 
 
