@@ -46,7 +46,7 @@ class User_Interface:
         self.config = Config.from_yaml(config_path)
 
         async with API(self.config) as self.api:
-            print(f'{LOGO} {self.config.version}\n')
+            print(f'{LOGO}\n')
 
             account = await self.api.get_account()
             username: str = account['username']
