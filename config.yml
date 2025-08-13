@@ -10,7 +10,7 @@ engines:
     uci_options:                          # Arbitrary UCI options passed to the engine.
       Threads: 6                          # Max CPU threads the engine can use.
       Hash: 12512                         # Max memory (in megabytes) the engine can allocate.
-      Move Overhead: 275                  # Increase if your bot flags games too often.
+      Move Overhead: 222                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 5.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -93,10 +93,10 @@ opening_books:
       selection: best_move                # Move selection is one of "weighted_random", "uniform_random" or "best_move".
       max_depth: 999                      # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
+        - G.O.A.T
         - loki
         - is
         - the
-        - goat
 #   Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 #   'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
 #   Append '_white' or '_black' to use the books only as the specific color.
@@ -232,10 +232,11 @@ blacklist:                                # List of users who are not challenged
 # - Username2
 
 books:
-  goat: "./engines/Book3.bin"
+  G.O.A.T: "./engines/Book3.bin"
   is: "./engines/win.bin"
   the: "./engines/bot.bin"
   loki: "./engines/b.bin"
+
 
 
 
