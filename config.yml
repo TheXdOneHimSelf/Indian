@@ -238,7 +238,8 @@ blacklist:                                # List of users who are not challenged
 books:
   white: "./engines/white.bin"
   black: "./engines/black.bin"
-  draw: "./engines/draws.bin"
+  draw: "./engines/draw.bin"
+
 
 
 
