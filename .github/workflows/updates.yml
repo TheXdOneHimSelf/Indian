@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Add Upstream Remote
-        run: git remote add upstream https://github.com/suprateem-ux/suprabot.git
+        run: git remote add upstream https://github.com/torom/botli.git
 
       - name: Fetch Upstream
         run: git fetch upstream
