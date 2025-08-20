@@ -10,7 +10,7 @@ engines:
     uci_options:                          # Arbitrary UCI options passed to the engine.
       Threads: 12                         # Max CPU threads the engine can use.
       Hash: 15360                         # Max memory (in megabytes) the engine can allocate.
-      Move Overhead: 200                  # Increase if your bot flags games too often.
+      Move Overhead: 176                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 5.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -39,7 +39,7 @@ engines:
     uci_options:                          # Arbitrary UCI options passed to the engine.
       Threads: 12                         # Max CPU threads the engine can use.
       Hash: 15360                         # Max memory (in megabytes) the engine can allocate.
-      Move Overhead: 275                  # Increase if your bot flags games too often.
+      Move Overhead: 175                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 5.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -239,6 +239,7 @@ books:
   white: "./engines/white.bin"
   black: "./engines/black.bin"
   draw: "./engines/draw.bin"
+
 
 
 
